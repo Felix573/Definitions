@@ -1,22 +1,18 @@
 {
-  "manifestVersion": 1,
-  "id": "plugin_template",
-  "name": "Plugin Template",
-  "author": "remnote",
-  "repoUrl": "",
-  "version": {
-    "major": 0,
-    "minor": 0,
-    "patch": 1
+  "manifest_version": 2,
+  "name": "RemNote Definitions Linker",
+  "version": "1.0",
+  "description": "Plugin pour créer des liens internes vers des définitions dans RemNote",
+  "icons": {
+    "48": "icon.png"
   },
-  "theme": [],
-  "enableOnMobile": false,
-  "description": "",
-  "requestNative": false,
-  "requiredScopes": [
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
     {
-      "type": "All",
-      "level": "Read"
+      "matches": ["*://www.remnote.io/*"],
+      "js": ["linkDefinitions.js"]
     }
   ]
 }
